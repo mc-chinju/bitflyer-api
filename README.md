@@ -23,7 +23,7 @@ Or install it yourself as:
 ```ruby
 require "bitflyer_api"
 
-BitflyerApi.config do |config|
+BitflyerApi.configure do |config|
   config.key    = YOUR_API_KEY
   config.secret = YOUR_API_SECRET
 end
