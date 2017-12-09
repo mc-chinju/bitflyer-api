@@ -3,15 +3,15 @@ module BitflyerApi::Methods::Private
     def my_send_child_order(product_code:, child_order_type:, side:, price: nil, size:,
       minute_to_expire: 43200, time_in_force: "GTC")
 
-      body = "{
-        'product_code': \"#{product_code}\",
-        'child_order_type': \"#{child_order_type}\",
-        'side': \"#{side}\",
-        'price': #{price},
-        'size': #{size},
-        'minute_to_expire': #{minute_to_expire},
-        'time_in_force': \"#{time_in_force}\"
-      }"
+      body = prepare_query(
+        product_code: product_code,
+        child_order_type: child_order_type,
+        side: side,
+        price: price,
+        size: size,
+        minute_to_expire: minute_to_expire,
+        time_in_force: time_in_force,
+      )
 
       res = conn.post do |req|
         req.url "/v1/me/sendchildorder"
@@ -27,15 +27,15 @@ module BitflyerApi::Methods::Private
 
       body =
         if child_order_id
-          "{
-            'product_code': \"#{product_code}\",
-            'child_order_id': \"#{child_order_id}\"
-          }"
+          prepare_query(
+            product_code: product_code,
+            child_order_id: child_order_id,
+          )
         elsif child_order_acceptance_id
-          "{
-            'product_code': \"#{product_code}\",
-            'child_order_acceptance_id': \"#{child_order_acceptance_id}\"
-          }"
+          prepare_query(
+            product_code: product_code,
+            child_order_acceptance_id: child_order_acceptance_id,
+          )
         end
 
       res = conn.post do |req|
@@ -47,9 +47,7 @@ module BitflyerApi::Methods::Private
     end
 
     def my_cancel_all_child_orders(product_code:)
-      body = "{
-        'product_code': \"#{product_code}\"
-      }"
+      body = prepare_query(product_code: product_code)
 
       res = conn.post do |req|
         req.url "/v1/me/cancelallchildorders"
@@ -73,6 +71,15 @@ module BitflyerApi::Methods::Private
 
       res = conn.get("/v1/me/getchildorders", query)
       res.body
+    end
+
+    def my_send_ifd_order
+    end
+
+    def my_send_oco_order
+    end
+
+    def my_send_ifdoco_order
     end
 
     def my_send_parent_order(
@@ -190,7 +197,7 @@ module BitflyerApi::Methods::Private
         count: count,
         before: before,
         after: after,
-        parent_order_state: parent_order_state
+        parent_order_state: parent_order_state,
       )
 
       res = conn.get("/v1/me/getparentorders", query)
@@ -202,9 +209,9 @@ module BitflyerApi::Methods::Private
 
       query =
         if parent_order_id
-          {parent_order_id: parent_order_id}
+          prepare_query(parent_order_id: parent_order_id)
         else
-          {parent_order_acceptance_id: parent_order_acceptance_id}
+          prepare_query(parent_order_acceptance_id: parent_order_acceptance_id)
         end
 
       res = conn.get("/v1/me/getparentorder", query)
@@ -216,15 +223,15 @@ module BitflyerApi::Methods::Private
 
       body =
         if parent_order_id
-          "{
-            'product_code': \"#{product_code}\",
-            'parent_order_id': \"#{parent_order_id}\",
-          }"
-        elsif parent_order_acceptance_id
-          "{
-            'product_code': \"#{product_code}\",
-            'parent_order_acceptance_id': \"#{parent_order_acceptance_id}\",
-          }"
+          prepare_query(
+            product_code: product_code,
+            parent_order_id: parent_order_id,
+          )
+        else
+          prepare_query(
+            product_code: product_code,
+            parent_order_acceptance_id: parent_order_acceptance_id,
+          )
         end
 
       res = conn.post do |req|
