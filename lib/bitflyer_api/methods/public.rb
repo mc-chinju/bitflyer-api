@@ -30,6 +30,12 @@ module BitflyerApi
         res.body
       end
 
+      def board_state(product_code:)
+        query = prepare_query(product_code: product_code)
+        res = conn.get("/v1/getboardstate", query)
+        res.body
+      end
+
       def health
         res = conn.get("/v1/gethealth")
         res.body
