@@ -97,7 +97,7 @@ module BitflyerApi::Methods::Private
       third_price: nil,
       third_size: nil,
       third_trigger_price: nil,
-      third_offset: nil,
+      third_offset: nil
     )
 
       body =
