@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe "HTTP Public Api" do
+RSpec.describe "HTTP Private Api" do
   before do
     BitflyerApi.configure do |config|
       config.key    = "dummy_key"
@@ -10,7 +10,7 @@ RSpec.describe "HTTP Public Api" do
     @client = BitflyerApi.client
   end
 
-  fit "GET my_addresses" do
+  it "GET my_addresses" do
     VCR.use_cassette("get_my_addresses") do
       response = @client.my_addresses
       _response = response.first

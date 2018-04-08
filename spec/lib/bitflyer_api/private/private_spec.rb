@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe "HTTP Public Api" do
+RSpec.describe "HTTP Private Api" do
   let!(:client){ BitflyerApi.client }
 
   it "Needs API_KEY and API_SECRET" do

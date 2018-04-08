@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe "HTTP Public Api" do
+RSpec.describe "HTTP Private Api" do
   before do
     BitflyerApi.configure do |config|
       config.key    = "dummy_key"
