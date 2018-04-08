@@ -39,7 +39,7 @@ RSpec.describe "HTTP Public Api" do
   end
 
   it "GET board_state" do
-    VCR.use_cassette("getboardstate") do
+    VCR.use_cassette("get_board_state") do
       response = client.board_state(product_code: "FX_BTC_JPY")
 
       aggregate_failures do
