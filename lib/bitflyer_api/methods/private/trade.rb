@@ -76,24 +76,28 @@ module BitflyerApi::Methods::Private
     end
 
     def my_send_parent_order(
-      order_method: "SIMPLE",
+      order_method:,
       minute_to_expire: 43200,
       time_in_force: "GTC",
       product_code:,
       first_condition_type:,
-      second_condition_type:,
-      third_condition_type: nil,
       first_side:,
-      second_side:,
-      third_side: nil,
-      size:,
       first_price: nil,
-      second_price: nil,
-      third_price: nil,
+      first_size:,
       first_trigger_price: nil,
+      first_offset: nil,
+      second_condition_type:,
+      second_price: nil,
+      second_side:,
+      second_size:,
       second_trigger_price: nil,
+      second_offset: nil,
+      third_condition_type: nil,
+      third_side: nil,
+      third_price: nil,
+      third_size: nil,
       third_trigger_price: nil,
-      offset: nil
+      third_offset: nil,
     )
 
       body =
@@ -107,17 +111,19 @@ module BitflyerApi::Methods::Private
                'product_code': \"#{product_code}\",
                'condition_type': \"#{first_condition_type}\",
                'side': \"#{first_side}\",
+               'size': #{first_size},
                'price': #{first_price},
                'trigger_price': #{first_trigger_price},
-               'size': #{size}
+               'offset': #{first_offset},
              },
              {
                'product_code': \"#{product_code}\",
                'condition_type': \"#{second_condition_type}\",
+               'size': #{second_size},
                'side': \"#{second_side}\",
                'price': #{second_price},
                'trigger_price': #{second_trigger_price},
-               'size': #{size}
+               'offset': #{second_offset},
              }]
            }"
         when "OCO"
@@ -129,17 +135,19 @@ module BitflyerApi::Methods::Private
                'product_code': \"#{product_code}\",
                'condition_type': \"#{first_condition_type}\",
                'side': \"#{first_side}\",
+               'size': #{first_size},
                'price': #{first_price},
                'trigger_price': #{first_trigger_price},
-               'size': #{size}
+               'offset': #{first_offset},               
              },
              {
                'product_code': \"#{order_method}\",
                'condition_type': \"#{second_condition_type}\",
+               'size': #{second_size},
                'side': \"#{second_side}\",
                'price': #{second_price},
                'trigger_price': #{second_trigger_price},
-               'size': #{size}
+               'offset': #{second_offset},               
              }]
            }"
         when "IFDOCO"
@@ -151,29 +159,45 @@ module BitflyerApi::Methods::Private
               'product_code': \"#{product_code}\",
               'condition_type': \"#{first_condition_type}\",
               'side': \"#{first_side}\",
+              'size': #{first_size},
               'price': #{first_price},
               'trigger_price': #{first_trigger_price},
-              'size': #{size}
+              'offset': #{first_offset},                             
             },
             {
               'product_code': \"#{product_code}\",
               'condition_type': \"#{second_condition_type}\",
               'side': \"#{second_side}\",
+              'size': #{second_size},
               'price': #{second_price},
               'trigger_price': #{second_trigger_price},
-              'size': #{size}
+              'offset': #{second_offset},               
             },
             {
               'product_code': \"#{product_code}\",
               'condition_type': \"#{third_condition_type}\",
               'side': \"#{third_side}\",
+              'size': #{third_size},
               'price': #{third_price},
               'trigger_price': #{third_trigger_price},
-              'size': #{size}
+              'offset': #{third_offset},               
             }]
           }"
-
         else # SIMPLE
+          "{
+             'order_method': \"#{order_method}\",
+             'minute_to_expire': #{minute_to_expire},
+             'time_in_force': \"#{time_in_force}\",
+             'parameters': [{
+               'product_code': \"#{product_code}\",
+               'condition_type': \"#{first_condition_type}\",
+               'side': \"#{first_side}\",
+               'size': #{second_size},
+               'price': #{first_price},
+               'trigger_price': #{first_trigger_price},
+               'offset': #{first_offset},                             
+             }]
+          }"
         end
 
       res = conn.post do |req|
