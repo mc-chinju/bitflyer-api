@@ -86,10 +86,10 @@ module BitflyerApi::Methods::Private
       first_size:,
       first_trigger_price: nil,
       first_offset: nil,
-      second_condition_type:,
+      second_condition_type: nil,
       second_price: nil,
-      second_side:,
-      second_size:,
+      second_side: nil,
+      second_size: nil,
       second_trigger_price: nil,
       second_offset: nil,
       third_condition_type: nil,
@@ -141,7 +141,7 @@ module BitflyerApi::Methods::Private
                'offset': #{first_offset},
              },
              {
-               'product_code': \"#{order_method}\",
+               'product_code': \"#{product_code}\",
                'condition_type': \"#{second_condition_type}\",
                'size': #{second_size},
                'side': \"#{second_side}\",
@@ -183,21 +183,10 @@ module BitflyerApi::Methods::Private
               'offset': #{third_offset},
             }]
           }"
-        else # SIMPLE
-          "{
-             'order_method': \"#{order_method}\",
-             'minute_to_expire': #{minute_to_expire},
-             'time_in_force': \"#{time_in_force}\",
-             'parameters': [{
-               'product_code': \"#{product_code}\",
-               'condition_type': \"#{first_condition_type}\",
-               'side': \"#{first_side}\",
-               'size': #{second_size},
-               'price': #{first_price},
-               'trigger_price': #{first_trigger_price},
-               'offset': #{first_offset},
-             }]
-          }"
+        when "SIMPLE"
+          raise "Use my_send_child_order method!"
+        else
+          raise "Specify order_method!"
         end
 
       res = conn.post do |req|

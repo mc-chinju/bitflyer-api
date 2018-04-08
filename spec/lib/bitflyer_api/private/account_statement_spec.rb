@@ -78,8 +78,8 @@ RSpec.describe "HTTP Private Api" do
   end
 
   # TODO: Create VCR cassette for test
-  xit "GET my_withdraw" do
-    VCR.use_cassette("get_my_withdraw") do
+  xit "POST my_withdraw" do
+    VCR.use_cassette("post_my_withdraw") do
       response = @client.my_withdraw(bank_account_id: 123456789, amount: 1000, code: 123456789)
 
       expect(response["message_id"]).to eq 123456789

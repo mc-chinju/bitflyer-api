@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitflyer.jp/v1/me/sendparentorder
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+                    'order_method': 'IFDOCO',
+                    'minute_to_expire': 43200,
+                    'time_in_force': "GTC",
+                    'parameters': [{
+                      'product_code': "FX_BTC_JPY",
+                      'condition_type': "LIMIT",
+                      'side': "BUY",
+                      'size': 0.01,
+                      'price': 600000,
+                      'trigger_price': ,
+                      'offset': ,
+                    },
+                    {
+                      'product_code': "FX_BTC_JPY",
+                      'condition_type': "LIMIT",
+                      'side': "SELL",
+                      'size': 0.01,
+                      'price': 700000,
+                      'trigger_price': ,
+                      'offset': ,
+                    },
+                    {
+                      'product_code': "FX_BTC_JPY",
+                      'condition_type': "LIMIT",
+                      'side': "SELL",
+                      'size': 0.01,
+                      'price': 550000,
+                      'trigger_price': ,
+                      'offset': ,
+                    }]
+                  }
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Content-Type:
+      - application/json
+      Access-Key:
+      - SA95gGKwXZuvZ1hoxRKfBL
+      Access-Timestamp:
+      - '1523247607'
+      Access-Sign:
+      - 6e8ca65f1fafe2b88bc3938e260dbe839f68b3fea19bfbe3b562b657cb5fd13f
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Apr 2018 04:20:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc672b6bbf6e1fd671aecbb89608536181523247607; expires=Tue, 09-Apr-19
+        04:20:07 GMT; path=/; domain=.bitflyer.jp; HttpOnly; Secure
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Request-Context:
+      - appId=cid-v1:e4fbc941-a2df-48ac-bbac-f2180e904002
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - sameorigin
+      Content-Security-Policy:
+      - 'default-src http: https: ws: wss: data: ''unsafe-inline'' ''unsafe-eval'''
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 408a2deddc869475-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"parent_order_acceptance_id":"JRF20180409-042007-101422"}'
+    http_version: 
+  recorded_at: Mon, 09 Apr 2018 04:20:08 GMT
+recorded_with: VCR 4.0.0

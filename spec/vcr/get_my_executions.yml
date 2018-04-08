@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitflyer.jp/v1/me/getexecutions?count=3&product_code=FX_BTC_JPY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Access-Key:
+      - SA95gGKwXZuvZ1hoxRKfBL
+      Access-Timestamp:
+      - '1523243934'
+      Access-Sign:
+      - 605c92e6a86532b48808abc7f2630d3223581e13c7cc1ff566d87fe4619002a1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Apr 2018 03:18:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dddcb7fe998b78984b3d57e0d024600761523243934; expires=Tue, 09-Apr-19
+        03:18:54 GMT; path=/; domain=.bitflyer.jp; HttpOnly; Secure
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Request-Context:
+      - appId=cid-v1:e4fbc941-a2df-48ac-bbac-f2180e904002
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - sameorigin
+      Content-Security-Policy:
+      - 'default-src http: https: ws: wss: data: ''unsafe-inline'' ''unsafe-eval'''
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4089d43f3dd994ab-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":197943563,"side":"SELL","price":763900.000000000000,"size":0.010000000000,"exec_date":"2018-04-08T14:52:12.47","child_order_id":"JFX20180408-145212-975024F","commission":0.000000000000,"child_order_acceptance_id":"JRF20180408-235207-487899"},{"id":197942487,"side":"BUY","price":763769.000000000000,"size":0.010000000000,"exec_date":"2018-04-08T14:51:03.19","child_order_id":"JFX20180408-145103-956582F","commission":0.000000000000,"child_order_acceptance_id":"JRF20180408-145041-347289"},{"id":197941216,"side":"BUY","price":762800.000000000000,"size":0.010000000000,"exec_date":"2018-04-08T14:49:46.87","child_order_id":"JFX20180408-144946-935824F","commission":0.000000000000,"child_order_acceptance_id":"JRF20180408-234938-155630"}]'
+    http_version: 
+  recorded_at: Mon, 09 Apr 2018 03:18:54 GMT
+recorded_with: VCR 4.0.0
