@@ -138,7 +138,7 @@ module BitflyerApi::Methods::Private
                'size': #{first_size},
                'price': #{first_price},
                'trigger_price': #{first_trigger_price},
-               'offset': #{first_offset},               
+               'offset': #{first_offset},
              },
              {
                'product_code': \"#{order_method}\",
@@ -147,7 +147,7 @@ module BitflyerApi::Methods::Private
                'side': \"#{second_side}\",
                'price': #{second_price},
                'trigger_price': #{second_trigger_price},
-               'offset': #{second_offset},               
+               'offset': #{second_offset},
              }]
            }"
         when "IFDOCO"
@@ -162,7 +162,7 @@ module BitflyerApi::Methods::Private
               'size': #{first_size},
               'price': #{first_price},
               'trigger_price': #{first_trigger_price},
-              'offset': #{first_offset},                             
+              'offset': #{first_offset},
             },
             {
               'product_code': \"#{product_code}\",
@@ -171,7 +171,7 @@ module BitflyerApi::Methods::Private
               'size': #{second_size},
               'price': #{second_price},
               'trigger_price': #{second_trigger_price},
-              'offset': #{second_offset},               
+              'offset': #{second_offset},
             },
             {
               'product_code': \"#{product_code}\",
@@ -180,7 +180,7 @@ module BitflyerApi::Methods::Private
               'size': #{third_size},
               'price': #{third_price},
               'trigger_price': #{third_trigger_price},
-              'offset': #{third_offset},               
+              'offset': #{third_offset},
             }]
           }"
         else # SIMPLE
@@ -195,7 +195,7 @@ module BitflyerApi::Methods::Private
                'size': #{second_size},
                'price': #{first_price},
                'trigger_price': #{first_trigger_price},
-               'offset': #{first_offset},                             
+               'offset': #{first_offset},
              }]
           }"
         end

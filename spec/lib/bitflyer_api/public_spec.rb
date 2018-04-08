@@ -48,7 +48,7 @@ RSpec.describe "HTTP Public Api" do
       end
     end
   end
-  
+
   it "GET health" do
     VCR.use_cassette("get_health") do
       response = client.health
@@ -64,4 +64,3 @@ RSpec.describe "HTTP Public Api" do
     expect(response.first.has_key?("nickname")).to be_truthy
   end
 end
-  
