@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "bitflyer_api"
+require "vcr"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -10,5 +11,11 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  VCR.configure do |c|
+    c.cassette_library_dir = "spec/vcr"
+    c.hook_into :webmock
+    c.allow_http_connections_when_no_cassette = false
   end
 end
