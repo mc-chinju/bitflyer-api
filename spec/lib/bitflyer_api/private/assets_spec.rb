@@ -8,7 +8,7 @@ RSpec.describe "HTTP Public Api" do
     end
 
     @client = BitflyerApi.client
-  end 
+  end
 
   it "GET my_balance" do
     VCR.use_cassette("get_my_balance") do
@@ -32,7 +32,7 @@ RSpec.describe "HTTP Public Api" do
         expect(response["open_position_pnl"]).to be >= 0.0
         expect(response["require_collateral"]).to be >= 0.0
         expect(response["keep_rate"]).to be >= 0.0
-      end      
+      end
     end
   end
 

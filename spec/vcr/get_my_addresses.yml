@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitflyer.jp/v1/me/getaddresses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Access-Key:
+      - SA95gGKwXZuvZ1hoxRKfBL
+      Access-Timestamp:
+      - '1523195067'
+      Access-Sign:
+      - 3b76c54353168a83779929b041229016881a164492a1d3f0571d762cdc8191ba
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Apr 2018 13:44:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df8f8af8bfcf1702c20d0e22cfc7a80bc1523195067; expires=Mon, 08-Apr-19
+        13:44:27 GMT; path=/; domain=.bitflyer.jp; HttpOnly; Secure
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Request-Context:
+      - appId=cid-v1:e4fbc941-a2df-48ac-bbac-f2180e904002
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - sameorigin
+      Content-Security-Policy:
+      - 'default-src http: https: ws: wss: data: ''unsafe-inline'' ''unsafe-eval'''
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 40852b345a149463-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"type":"NORMAL","currency_code":"BTC","address":"35QDVwFDyQXHeGjpHX87zUUQPBHXNz8yFt"},{"type":"NORMAL","currency_code":"BCH","address":"35QDVwFDyQXHeGjpHX87zUUQPBHXNz8yFt"},{"type":"NORMAL","currency_code":"MONA","address":"MX5TAtBSjuZH9okeyf96xZnfN3hU8ciY9x"}]'
+    http_version: 
+  recorded_at: Sun, 08 Apr 2018 13:44:27 GMT
+recorded_with: VCR 4.0.0

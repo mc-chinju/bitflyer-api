@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitflyer.jp/v1/me/getdeposits?count=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Access-Key:
+      - SA95gGKwXZuvZ1hoxRKfBL
+      Access-Timestamp:
+      - '1523196334'
+      Access-Sign:
+      - afde7f3e500bfee8d0f0215b473777aba95df46c9c991e71f637022df21ab43c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Apr 2018 14:05:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=da427e30bd0f8add9d87dadbda651ccb11523196334; expires=Mon, 08-Apr-19
+        14:05:34 GMT; path=/; domain=.bitflyer.jp; HttpOnly; Secure
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Request-Context:
+      - appId=cid-v1:e4fbc941-a2df-48ac-bbac-f2180e904002
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - sameorigin
+      Content-Security-Policy:
+      - 'default-src http: https: ws: wss: data: ''unsafe-inline'' ''unsafe-eval'''
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 40854a234e0e9487-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":4154142,"order_id":"MDP20180402-015416-960965","currency_code":"JPY","amount":100000.0,"status":"COMPLETED","event_date":"2018-04-02T01:54:16.477"},{"id":2861971,"order_id":"MDP20180126-002630-820296","currency_code":"JPY","amount":100000.0,"status":"COMPLETED","event_date":"2018-01-26T00:26:30.007"},{"id":1698457,"order_id":"MDP20171127-150546-770189","currency_code":"JPY","amount":299324.0,"status":"COMPLETED","event_date":"2017-11-27T15:05:46.53"},{"id":1511494,"order_id":"MDP20171102-103930-253428","currency_code":"JPY","amount":300000.0,"status":"COMPLETED","event_date":"2017-11-02T10:39:30.52"},{"id":1132007,"order_id":"MDP20170827-062958-094200","currency_code":"JPY","amount":200324.0,"status":"COMPLETED","event_date":"2017-08-27T06:29:58.44"}]'
+    http_version: 
+  recorded_at: Sun, 08 Apr 2018 14:05:34 GMT
+recorded_with: VCR 4.0.0

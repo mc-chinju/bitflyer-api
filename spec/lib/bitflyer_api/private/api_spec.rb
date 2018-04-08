@@ -8,7 +8,7 @@ RSpec.describe "HTTP Public Api" do
     end
 
     @client = BitflyerApi.client
-  end 
+  end
 
   it "GET my_permissions" do
     VCR.use_cassette("get_my_permissions") do
