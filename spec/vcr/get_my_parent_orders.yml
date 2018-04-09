@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitflyer.jp/v1/me/getparentorders?count=100&parent_order_state=ACTIVE&product_code=FX_BTC_JPY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Access-Key:
+      - SA95gGKwXZuvZ1hoxRKfBL
+      Access-Timestamp:
+      - '1523245502'
+      Access-Sign:
+      - 8f49b71290c9a1b39c40b6a8a8f2846771fb6b435f7fc8e1a7e94922536a85e1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Apr 2018 03:45:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d5670f6ec958ead4307ed3f461cd022fc1523245502; expires=Tue, 09-Apr-19
+        03:45:02 GMT; path=/; domain=.bitflyer.jp; HttpOnly; Secure
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Request-Context:
+      - appId=cid-v1:e4fbc941-a2df-48ac-bbac-f2180e904002
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - sameorigin
+      Content-Security-Policy:
+      - 'default-src http: https: ws: wss: data: ''unsafe-inline'' ''unsafe-eval'''
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4089fa8638d52e15-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":32486273,"parent_order_id":"JCP20180409-034250-245215","product_code":"FX_BTC_JPY","side":"BUYSELL","parent_order_type":"IFD","price":700000.000000000000,"average_price":0.000000000000,"size":0.020000000000,"parent_order_state":"ACTIVE","expire_date":"2018-05-09T03:42:49.44","parent_order_date":"2018-04-09T03:42:49.44","parent_order_acceptance_id":"JRF20180409-124247-591695","outstanding_size":0.020000000000,"cancel_size":0.000000000000,"executed_size":0.000000000000,"total_commission":0.000000000000}]'
+    http_version: 
+  recorded_at: Mon, 09 Apr 2018 03:45:02 GMT
+recorded_with: VCR 4.0.0

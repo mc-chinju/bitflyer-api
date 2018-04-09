@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "bitflyer_api"
+require "pry"
 require "vcr"
 
 RSpec.configure do |config|

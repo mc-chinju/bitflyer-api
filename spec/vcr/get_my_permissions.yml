@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitflyer.jp/v1/me/getpermissions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Access-Key:
+      - SA95gGKwXZuvZ1hoxRKfBL
+      Access-Timestamp:
+      - '1523184526'
+      Access-Sign:
+      - f721f043d90d994e1b4307ec7dc9f5fff880df271ddb76726729c10e22bb2f99
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Apr 2018 10:48:46 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d0091de65e257ad51c3389191c91b58461523184526; expires=Mon, 08-Apr-19
+        10:48:46 GMT; path=/; domain=.bitflyer.jp; HttpOnly; Secure
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Request-Context:
+      - appId=cid-v1:e4fbc941-a2df-48ac-bbac-f2180e904002
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - sameorigin
+      Content-Security-Policy:
+      - 'default-src http: https: ws: wss: data: ''unsafe-inline'' ''unsafe-eval'''
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 408429dc4e9f9469-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '["/v1/getmarkets","/v1/markets","/v1/getmarkets/usa","/v1/markets/usa","/v1/getmarkets/eu","/v1/markets/eu","/v1/getboard","/v1/board","/v1/getticker","/v1/ticker","/v1/getexecutions","/v1/executions","/v1/getchats","/v1/getchats/usa","/v1/getchats/eu","/v1/gethealth","/v1/getboardstate","/v1/me/getaddresses","/v1/me/getcoinins","/v1/me/getcoinouts","/v1/me/getdeposits","/v1/me/getwithdrawals","/v1/me/getbankaccounts","/v1/me/withdraw","/v1/me/getpermissions","/v1/me/getbalance","/v1/me/getcollateral","/v1/me/getcollateralaccounts","/v1/me/sendchildorder","/v1/me/sendparentorder","/v1/me/cancelchildorder","/v1/me/cancelparentorder","/v1/me/cancelallchildorders","/v1/me/getchildorders","/v1/me/getparentorders","/v1/me/getparentorder","/v1/me/getexecutions","/v1/me/getpositions","/v1/me/getcollateralhistory","/v1/me/gettradingcommission"]'
+    http_version: 
+  recorded_at: Sun, 08 Apr 2018 10:48:46 GMT
+recorded_with: VCR 4.0.0

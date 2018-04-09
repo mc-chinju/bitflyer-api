@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitflyer.jp/v1/me/getpositions?product_code=FX_BTC_JPY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Access-Key:
+      - SA95gGKwXZuvZ1hoxRKfBL
+      Access-Timestamp:
+      - '1523248021'
+      Access-Sign:
+      - 91c453931c2f125b410f82fb85c2d57d6f06691ec8f974418eb59d88576fdbd4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 09 Apr 2018 04:27:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=db19b04a0931bf251a3146a8fede6f34e1523248021; expires=Tue, 09-Apr-19
+        04:27:01 GMT; path=/; domain=.bitflyer.jp; HttpOnly; Secure
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Request-Context:
+      - appId=cid-v1:e4fbc941-a2df-48ac-bbac-f2180e904002
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - sameorigin
+      Content-Security-Policy:
+      - 'default-src http: https: ws: wss: data: ''unsafe-inline'' ''unsafe-eval'''
+      Strict-Transport-Security:
+      - max-age=31536000
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 408a38043d682e51-NRT
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"product_code":"FX_BTC_JPY","side":"BUY","price":780133.000000000000,"size":0.010000000000,"commission":0.000000000000,"swap_point_accumulate":0.0,"require_collateral":520.08866666666666666666666667,"open_date":"2018-04-09T04:26:37.87","leverage":15.000000000000,"pnl":10.750000000000000000000000,"sfd":0.000000000000}]'
+    http_version: 
+  recorded_at: Mon, 09 Apr 2018 04:27:01 GMT
+recorded_with: VCR 4.0.0
